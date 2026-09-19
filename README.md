@@ -35,6 +35,8 @@ npm run dev
 
 `predev` migrates and seeds the local database first. Then navigate to the [website](http://localhost:4321) to see the site!
 
+The storefront homepage includes category and publisher filters so backers can narrow the catalog down to the games that match their preferred genres and studios.
+
 To preview a production build instead:
 
 ```bash
