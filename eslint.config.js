@@ -39,5 +39,22 @@ export default [
     languageOptions: {
       parser: tseslint.parser,
     },
+    rules: {
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { prefer: "type-imports", fixStyle: "separate-type-imports" },
+      ],
+      "comma-dangle": ["error", "always-multiline"],
+      quotes: ["error", "single", { avoidEscape: true }],
+      semi: ["error", "always"],
+    },
+  },
+
+  // Public data-layer functions must expose explicit types at module boundaries.
+  {
+    files: ["db/**/*.ts", "src/lib/**/*.ts"],
+    rules: {
+      "@typescript-eslint/explicit-module-boundary-types": "error",
+    },
   },
 ];
