@@ -119,6 +119,6 @@ export async function getAllGameIds(db: Database): Promise<number[]> {
 
 /** A single game by id, or null when it does not exist. */
 export async function getGameById(db: Database, id: number): Promise<Game | null> {
-    const row = await withGameFilters(baseGamesQuery(db), {}).where(eq(games.id, id)).get();
+    const row = await baseGamesQuery(db).where(eq(games.id, id)).get();
     return row ? mapGame(row) : null;
 }

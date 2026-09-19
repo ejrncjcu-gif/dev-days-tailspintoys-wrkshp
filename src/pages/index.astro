@@ -119,13 +119,13 @@ const hasFilters = selectedCategoryIds.length > 0 || selectedPublisherIds.length
   </div>
 
   <script>
-    const form = document.querySelector('[data-testid="game-filters-form"]');
-    const cards = Array.from(document.querySelectorAll('[data-testid="game-card"]'));
-    const emptyState = document.querySelector('[data-testid="empty-state"]');
-    const gamesGrid = document.querySelector('[data-testid="games-grid"]');
-    const summary = document.querySelector('[data-testid="game-results-summary"]');
-    const categoryInputs = Array.from(document.querySelectorAll('input[name="category"]'));
-    const publisherSelect = document.querySelector('[data-testid="publisher-filter"]');
+    const form = document.querySelector<HTMLFormElement>('[data-testid="game-filters-form"]');
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-testid="game-card"]'));
+    const emptyState = document.querySelector<HTMLElement>('[data-testid="empty-state"]');
+    const gamesGrid = document.querySelector<HTMLElement>('[data-testid="games-grid"]');
+    const summary = document.querySelector<HTMLElement>('[data-testid="game-results-summary"]');
+    const categoryInputs = Array.from(document.querySelectorAll<HTMLInputElement>('input[name="category"]'));
+    const publisherSelect = document.querySelector<HTMLSelectElement>('[data-testid="publisher-filter"]');
 
     function applyFilters() {
       const selectedCategories = categoryInputs.filter((input) => input.checked).map((input) => Number(input.value));
